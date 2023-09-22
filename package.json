@@ -1,0 +1,37 @@
+{
+    "name": "joiner-v3",
+    "version": "1.0.0",
+    "description": "Twitch Lurk Bot",
+    "main": "build/main.js",
+    "scripts": {
+        "build": "rm -rf ./build && tsc",
+        "start": "yarn build && node .",
+        "dev": "nodemon -e ts --ignore src/**/*.ts --exec \"yarn start\""
+    },
+    "nodemonConfig": {
+        "watch": [
+            "src"
+        ],
+        "ext": "ts",
+        "exec": "clear && ts-node src/main.ts"
+    },
+    "type": "module",
+    "author": "Kattah",
+    "license": "N/A",
+    "dependencies": {
+        "@twurple/api": "^5.0.18",
+        "@twurple/auth": "^5.0.18",
+        "@twurple/chat": "5.1.6",
+        "chalk": "^5.2.0",
+        "node-cron": "^3.0.2",
+        "reconnecting-websocket": "^4.4.0",
+        "redis": "^4.1.0",
+        "typescript": "^4.7.2",
+        "winston": "^3.8.2"
+    },
+    "devDependencies": {
+        "@types/node-cron": "^3.0.8",
+        "nodemon": "^2.0.16",
+        "ts-node": "^10.9.1"
+    }
+}
